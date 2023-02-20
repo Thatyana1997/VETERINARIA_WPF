@@ -36,6 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -55,13 +56,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Bases de Datos\Conn.cs" />
+    <Compile Include="Bases de Datos\ConnSQL.cs" />
+    <Compile Include="Clases\clsUsuario.cs" />
+    <Compile Include="Datos\dtoUsuario.cs" />
+    <Compile Include="Utilidades\escribirLog.cs" />
+    <Compile Include="Utilidades\util.cs" />
+    <Compile Include="Utilidades\variablesGlobales.cs" />
+    <Compile Include="Ventanas\Ingreso.xaml.cs">
+      <DependentUpon>Ingreso.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Ventanas\Propietario.xaml.cs">
       <DependentUpon>Propietario.xaml</DependentUpon>
     </Compile>
-    <Page Include="MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -69,10 +76,10 @@
     <Compile Include="Clases\clsHoja.cs" />
     <Compile Include="Clases\clsMascota.cs" />
     <Compile Include="Clases\clsPropietario.cs" />
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
+    <Page Include="Ventanas\Ingreso.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Ventanas\Propietario.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -104,9 +111,39 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Recursos\" />
-    <Folder Include="Utilidades\" />
+    <Resource Include="Recursos\paleta.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Ventanas\004-mascotas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Recursos\001-pata.png" />
+    <Resource Include="Recursos\002-botella-de-pet.png" />
+    <Resource Include="Recursos\003-pata-1.png" />
+    <Resource Include="Recursos\004-mascotas.png" />
+    <Resource Include="Recursos\005-factura.png" />
+    <Resource Include="Recursos\006-recibo.png" />
+    <Resource Include="Recursos\007-tarjeta-de-miembro.png" />
+    <Resource Include="Recursos\008-factura-1.png" />
+    <Resource Include="Recursos\009-vacunacion.png" />
+    <Resource Include="Recursos\010-huellas-de-garras.png" />
+    <Resource Include="Recursos\011-la-tienda-de-animales.png" />
+    <Resource Include="Recursos\012-trata.png" />
+    <Resource Include="Recursos\013-hueso.png" />
+    <Resource Include="Recursos\014-parque.png" />
+    <Resource Include="Recursos\015-lavar-al-perro.png" />
+    <Resource Include="Recursos\016-hombre-nina-y-perro.png" />
+    <Resource Include="Recursos\017-huella-de-perro-en-una-casa.png" />
+    <Resource Include="Recursos\018-guardar-carpeta.png" />
+    <Resource Include="Recursos\019-editar.png" />
+    <Resource Include="Recursos\020-delete.png" />
+    <Resource Include="Recursos\021-loupe.png" />
+    <Resource Include="Recursos\022-controlar.png" />
+    <Resource Include="Recursos\023-cancelar.png" />
+    <Resource Include="Recursos\024-nueva-pagina.png" />
+    <Resource Include="Recursos\025-huellas-dactilares.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
