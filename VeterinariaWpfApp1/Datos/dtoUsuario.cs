@@ -21,7 +21,8 @@ namespace VeterinariaWpfApp1.Datos
         {
             try
             {
-                string consulta = "SELECT USU_USUARIO FROM VETERINARIASOS.dbo.VT_USUARIOS WHERE USU_USUARIO = '" + datos.Usuario + "' AND USU_CLAVE = '" + datos.Clave + "'";
+                string consulta = "SELECT USU_USUARIO FROM VETERINARIASOS.dbo.VT_USUARIOS WHERE USU_USUARIO ='" 
+                    + datos.Usuario + "' AND USU_CLAVE = '" + datos.Clave + "'";
 
                 var existe = conn.SQLCargaDataTable(_SQLConnection, consulta, null);
                 if (existe.Rows.Count>0)

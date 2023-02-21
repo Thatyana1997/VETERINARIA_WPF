@@ -93,8 +93,7 @@ namespace VeterinariaWpfApp1.Bases_de_Datos
                 da.Fill(dt);
                 cmd.Dispose();
                 return dt;
-            }
-
+            } 
             catch (Exception ex)
             {
                 variablesGlobales.log = new escribirLog(ex.Message, false);

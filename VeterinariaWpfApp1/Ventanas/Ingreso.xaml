@@ -21,7 +21,7 @@
         </Rectangle>
         <Image x:Name="imgLogo" HorizontalAlignment="Left" Height="80" 
                Margin="95,84,0,0" VerticalAlignment="Top" Width="80" 
-               Source="/Ventanas/004-mascotas.png"/>
+               Source="/Ventanas/003-pata-1.png"/>
         <Label x:Name="lblNombre" Content="Veterinaria &#xA;       SOS" 
                Height="160" Margin="0,185,0,90" Width="300" 
                FontFamily="Caladea" FontSize="48" VerticalContentAlignment="Center" 

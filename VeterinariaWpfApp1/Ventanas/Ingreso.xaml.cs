@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using VeterinariaWpfApp1.Clases;
 using VeterinariaWpfApp1.Datos;
+using VeterinariaWpfApp1.Utilidades;
 
 namespace VeterinariaWpfApp1.Ventanas
 {
@@ -34,15 +35,21 @@ namespace VeterinariaWpfApp1.Ventanas
         private void btnIngresar_Click(object sender, RoutedEventArgs e)
         {
             if (txtUsuario.Text.Length > 0 && txtClave.Password.ToString().Length > 0)
-            {
+            { 
                 clsUsuario usuario = new clsUsuario(txtUsuario.Text, txtClave.Password.ToString());
-
+                
+                //data transfer object DTO que comunica con la base de datos
                 dtoUsuario usu = new dtoUsuario();
-                if(usu.validarIngreso(usuario) == true)
+                if (usu.validarIngreso(usuario) == true)
                 {
+                    variablesGlobales.usuariologin = usuario.Usuario;
                     Propietario ventana = new Propietario();
                     ventana.ShowDialog();
-                } 
+                }
+                else
+                {
+                    MessageBox.Show("Datos incorrectos!");
+                }
             }
             else
             {

@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using VeterinariaWpfApp1.Utilidades;
 
 namespace VeterinariaWpfApp1.Ventanas
 {
@@ -20,8 +21,9 @@ namespace VeterinariaWpfApp1.Ventanas
     public partial class Propietario : Window
     {
         public Propietario()
-        {
+        { 
             InitializeComponent();
+            lblUsuConectado.Content = variablesGlobales.usuariologin;
         }
         public void modoPantalla()
         {
@@ -56,6 +58,11 @@ namespace VeterinariaWpfApp1.Ventanas
         private void rbtModificacion_Checked(object sender, RoutedEventArgs e)
         {
             modoPantalla();
+        }
+
+        private void btnRegresarMenu_Click(object sender, object e)
+        {
+            this.Close();
         }
     }
 }
