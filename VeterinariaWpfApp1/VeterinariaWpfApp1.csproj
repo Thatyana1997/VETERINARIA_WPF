@@ -14,6 +14,8 @@
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -35,9 +37,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Xaml.Behaviors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Xaml.Behaviors.Wpf.1.1.39\lib\net45\Microsoft.Xaml.Behaviors.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Presentation" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -59,15 +66,24 @@
     <Compile Include="Bases de Datos\Conn.cs" />
     <Compile Include="Bases de Datos\ConnSQL.cs" />
     <Compile Include="Clases\clsUsuario.cs" />
+    <Compile Include="Datos\dtoHojaClinica.cs" />
+    <Compile Include="Datos\dtoMascota.cs" />
+    <Compile Include="Datos\dtoPropietario.cs" />
     <Compile Include="Datos\dtoUsuario.cs" />
     <Compile Include="Utilidades\escribirLog.cs" />
     <Compile Include="Utilidades\util.cs" />
     <Compile Include="Utilidades\variablesGlobales.cs" />
+    <Compile Include="Ventanas\AgregarMascota.xaml.cs">
+      <DependentUpon>AgregarMascota.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas\HojaClinica.xaml.cs">
+      <DependentUpon>HojaClinica.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Ventanas\Ingreso.xaml.cs">
       <DependentUpon>Ingreso.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Ventanas\Propietario.xaml.cs">
-      <DependentUpon>Propietario.xaml</DependentUpon>
+    <Compile Include="Ventanas\AgregarPropietario.xaml.cs">
+      <DependentUpon>AgregarPropietario.xaml</DependentUpon>
     </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
@@ -76,11 +92,19 @@
     <Compile Include="Clases\clsHoja.cs" />
     <Compile Include="Clases\clsMascota.cs" />
     <Compile Include="Clases\clsPropietario.cs" />
+    <Page Include="Ventanas\AgregarMascota.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas\HojaClinica.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Ventanas\Ingreso.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Ventanas\Propietario.xaml">
+    <Page Include="Ventanas\AgregarPropietario.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -103,6 +127,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

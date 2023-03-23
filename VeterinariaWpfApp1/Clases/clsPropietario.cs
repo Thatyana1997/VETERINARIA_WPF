@@ -12,6 +12,8 @@ namespace VeterinariaWpfApp.Clases
         private int identificador;
         private String primerNombre, segundoNombre, primerApellido, segundoApellido, numeroIdentificacion; 
         private String correoElectronico, telefonoCelular;
+        private DateTime fechaAdicion, fechaModificacion;
+        private String adicionadoPor, modificadorPor;
         #endregion
 
         #region Constructores
@@ -25,10 +27,14 @@ namespace VeterinariaWpfApp.Clases
             this.numeroIdentificacion = "";
             this.correoElectronico = "";
             this.telefonoCelular = "";
+            this.adicionadoPor = "";
+            this.fechaAdicion = DateTime.Now;
+            this.modificadorPor = "";
+            this.fechaModificacion = DateTime.Now;
         }
 
         public clsPropietario(int iden, String pnom, String snom, String pape, String sape,
-                              String nuid, String corr, String tele)
+                              String nuid, String corr, String tele, String padicpor, DateTime pfecadic)
         {
             this.identificador = iden;
             this.primerNombre = pnom;
@@ -38,6 +44,20 @@ namespace VeterinariaWpfApp.Clases
             this.numeroIdentificacion = nuid;
             this.correoElectronico = corr;
             this.telefonoCelular = tele;
+            this.adicionadoPor = padicpor;
+            this.fechaAdicion = pfecadic;
+        }
+        public clsPropietario(int iden, String pnom, String pape, String sape,
+                             String corr, String tele, String pmodpor, DateTime pfecmod)
+        {
+            this.identificador = iden;
+            this.primerNombre = pnom; 
+            this.primerApellido = pape;
+            this.segundoApellido = sape; 
+            this.correoElectronico = corr;
+            this.telefonoCelular = tele;
+            this.modificadorPor = pmodpor;
+            this.fechaModificacion = pfecmod;
         }
         #endregion
 
@@ -82,6 +102,26 @@ namespace VeterinariaWpfApp.Clases
         {
             set { telefonoCelular = value.ToUpper(); }
             get { return telefonoCelular; }
+        }
+        public String AdicionadoPor
+        {
+            set { adicionadoPor = value; }
+            get { return adicionadoPor; }
+        }
+        public DateTime FechaAdicion
+        {
+            set { fechaAdicion = value; }
+            get { return fechaAdicion; }
+        }
+        public String ModificadoPor
+        {
+            set { modificadorPor = value; }
+            get { return modificadorPor; }
+        }
+        public DateTime FechaModificacion
+        {
+            set { fechaModificacion = value; }
+            get { return fechaModificacion; }
         }
         #endregion
 

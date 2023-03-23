@@ -16,6 +16,8 @@ namespace VeterinariaWpfApp.Clases
         private char sexo;
         private decimal peso;
         private int idPropietario;
+        private DateTime fechaAdicion, fechaModificacion;
+        private String adicionadoPor, modificadorPor;
         #endregion
 
         #region Constructores
@@ -28,9 +30,14 @@ namespace VeterinariaWpfApp.Clases
             this.peso = 0;
             this.alergias = "";
             this.idPropietario = 0;
+            this.adicionadoPor = "";
+            this.fechaAdicion = DateTime.Now;
+            this.modificadorPor = "";
+            this.fechaModificacion = DateTime.Now;
         }
 
-        public clsMascota(int iden, String nomb, DateTime fnac, char sex, Decimal pes, String aler, int ipro)
+        public clsMascota(int iden, String nomb, DateTime fnac, char sex, Decimal pes, String aler,
+            int ipro, String padicpor, DateTime pfecadic)
         {
             this.identificador = iden;
             this.nombre = nomb;
@@ -39,6 +46,17 @@ namespace VeterinariaWpfApp.Clases
             this.peso = pes;
             this.alergias = aler;
             this.idPropietario = ipro;
+            this.adicionadoPor = padicpor;
+            this.fechaAdicion = pfecadic;
+        }
+        public clsMascota(int iden, String nomb, Decimal pes, String aler, String pmodpor, DateTime pfecmod)
+        {
+            this.identificador = iden;
+            this.nombre = nomb;
+            this.peso = pes;
+            this.alergias = aler;
+            this.modificadorPor = pmodpor;
+            this.fechaModificacion = pfecmod;
         }
         #endregion
 
@@ -79,6 +97,26 @@ namespace VeterinariaWpfApp.Clases
             set { idPropietario = value; }
             get { return idPropietario; }
         }
+        public String AdicionadoPor
+        {
+            set { adicionadoPor = value; }
+            get { return adicionadoPor; }
+        }
+        public DateTime FechaAdicion
+        {
+            set { fechaAdicion = value; }
+            get { return fechaAdicion; }
+        }
+        public String ModificadoPor
+        {
+            set { modificadorPor = value; }
+            get { return modificadorPor; }
+        }
+        public DateTime FechaModificacion
+        {
+            set { fechaModificacion = value; }
+            get { return fechaModificacion; }
+        }
         #endregion
 
         #region Funciones y Procedimientos
@@ -89,7 +127,7 @@ namespace VeterinariaWpfApp.Clases
                    " Fecha de nacimiento: " + this.fechaNacimiento + "\n" +
                    " Sexo: " + this.sexo + "\n" +
                    " Peso: " + this.peso + "\n" +
-                   " Alergias: " + this.alergias + "\n"+
+                   " Alergias: " + this.alergias + "\n" +
                    " Id Propietario: " + this.idPropietario;
             return dato;
         }

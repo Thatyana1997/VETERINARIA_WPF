@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace VeterinariaWpfApp1.Utilidades
@@ -21,7 +22,14 @@ namespace VeterinariaWpfApp1.Utilidades
             {
                 MessageBox.Show("Solo se permiten letras!", "Advertencia", MessageBoxButton.OK);
                 e.Handled = true;
-            } 
+            }
+        }
+        public static void limpiarCampos(List<TextBox> campos)
+        {
+            for (int x = 0; x < campos.Count; x++)
+            {
+                campos[x].Text = "";
+            }
         }
     }
 }

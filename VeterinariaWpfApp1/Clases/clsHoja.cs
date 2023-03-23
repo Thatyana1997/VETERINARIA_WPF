@@ -12,6 +12,8 @@ namespace VeterinariaWpfApp.Clases
         private int identificador;
         private String sintomas, diagnostico, tratamiento;
         private int idMascota;
+        private DateTime fechaAdicion, fechaModificacion;
+        private String adicionadoPor, modificadorPor;
         #endregion
 
         #region Constructores
@@ -22,15 +24,31 @@ namespace VeterinariaWpfApp.Clases
             this.diagnostico = "";
             this.tratamiento = "";
             this.idMascota = 0;
+            this.adicionadoPor = "";
+            this.fechaAdicion = DateTime.Now;
+            this.modificadorPor = "";
+            this.fechaModificacion = DateTime.Now;
         }
 
-        public clsHoja(int iden, String sint, String diag, String trat, int imas)
+        public clsHoja(int iden, String sint, String diag, String trat, int imas, String padicpor, DateTime pfecadic)
         {
             this.identificador = iden;
             this.sintomas = sint;
             this.diagnostico = diag;
             this.tratamiento = trat;
             this.idMascota = imas;
+            this.adicionadoPor = padicpor;
+            this.fechaAdicion = pfecadic;
+        }
+        public clsHoja(bool editar, int iden, String sint, String diag, String trat, int imas, String pmodpor, DateTime pfecmod)
+        {
+            this.identificador = iden;
+            this.sintomas = sint;
+            this.diagnostico = diag;
+            this.tratamiento = trat;
+            this.idMascota = imas;
+            this.modificadorPor = pmodpor;
+            this.fechaModificacion = pfecmod;
         }
         #endregion
 
@@ -59,6 +77,26 @@ namespace VeterinariaWpfApp.Clases
         {
             set { idMascota = value; }
             get { return idMascota; }
+        }
+        public String AdicionadoPor
+        {
+            set { adicionadoPor = value; }
+            get { return adicionadoPor; }
+        }
+        public DateTime FechaAdicion
+        {
+            set { fechaAdicion = value; }
+            get { return fechaAdicion; }
+        }
+        public String ModificadoPor
+        {
+            set { modificadorPor = value; }
+            get { return modificadorPor; }
+        }
+        public DateTime FechaModificacion
+        {
+            set { fechaModificacion = value; }
+            get { return fechaModificacion; }
         }
         #endregion
 

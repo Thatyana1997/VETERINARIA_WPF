@@ -43,12 +43,12 @@ namespace VeterinariaWpfApp1.Ventanas
                 if (usu.validarIngreso(usuario) == true)
                 {
                     variablesGlobales.usuariologin = usuario.Usuario;
-                    Propietario ventana = new Propietario();
+                    HojaClinica ventana = new HojaClinica();
                     ventana.ShowDialog();
                 }
                 else
                 {
-                    MessageBox.Show("Datos incorrectos!");
+                    MessageBox.Show("Usuario y Clave incorrectos!");
                 }
             }
             else
